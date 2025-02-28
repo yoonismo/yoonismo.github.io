@@ -23,8 +23,8 @@ author1:
   # Rearrange to change the order in which they appear
   # You can also provide an absolute URL (starting with https://) instead of usernames
   social:
-    twitter:         <username>
-    github:          <username>
+    # twitter:         <username>
+    github:          https://github.com/yoonismo
     # email:           <mail@domain.tld>
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
@@ -36,7 +36,7 @@ author1:
     # spotify:         <user>/<number>
     # soundcloud:      <username>
     # lastfm:          <username>
-    # instagram:       <username>
+     instagram:       https://www.instagram.com/yoonismo/
     # flickr:          <string@string>
     # 500px:           <username>
     # dribbble:        <username>
