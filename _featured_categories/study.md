@@ -6,6 +6,6 @@ slug: study
 # 나는 그냥 (게시판 글 dir 이름, _featured_categories에 md파일명 다 맞췄다. 
 
 description: >
-  공부하고 복습하기
+  Study and Repeat
 sitemap: false
 ---
