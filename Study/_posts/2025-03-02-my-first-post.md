@@ -1,17 +1,9 @@
 ---
+layout: post
 title:  "[Jekyll] How to post on Github blog"
-#excerpt: "md 파일에 마크다운 문법으로 작성하여 Github 원격 저장소에 업로드 해보자. 에디터는 Visual Studio code 사용! 로컬 서버에서 확인도 해보자. "
-
-categories:
-  - Study
-#tags:
-  #- [Blog, jekyll, Github, Git]
-
-toc: true
-toc_sticky: true
- 
-date: 2025-03-02
-last_modified_at: 2025-03-04
+date:   2025-03-02 22:44:12 -0800
+last_modified_at: 2025-03-04 13:44:12 -0800
+categories: Study
 ---
 
 This is my first time posting. Below is how to centralize a sentence or paragraph. 
