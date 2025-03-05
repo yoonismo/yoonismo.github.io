@@ -1,23 +1,30 @@
 basics:
-  name: John Doe
-  label: Data Scientist
-  email: johndoe@example.com
-  phone: +1-234-567-890
-  website: https://example.com
+  name: Yoon Choi
+  #label: Data Scientist
+  email: lemineml@uw.edu
+  #phone: +1-234-567-890
+  website: https://yoonismo.github.io
   summary: >
-    Passionate data scientist with 5+ years of experience in machine learning and data analysis.
+    Ph.D. in economics
 
 skills:
   - name: Programming Languages
     keywords:
       - Python
       - R
-      - SQL
-  - name: Machine Learning
+      - MATLAB
+      - Fortran
+  - name: Languages
     keywords:
-      - Scikit-learn
-      - TensorFlow
-      - PyTorch
+      - Korean (native)
+      - English (fluent)
+      - Spanish (fluent)
+      - Japanese (beginner)
+  #- name: Machine Learning
+  #  keywords:
+  #    - Scikit-learn
+  #    - TensorFlow
+  #    - PyTorch
 
 experience:
   - company: ABC Corp
@@ -34,8 +41,8 @@ experience:
       Analyzed large datasets and created dashboards.
 
 education:
-  - institution: University of Example
-    area: Data Science
-    studyType: M.S.
-    startDate: 2015-01-01
-    endDate: 2017-01-01
+  - institution: University of Washington
+    area: Economics
+    studyType: Ph.D. 
+    startDate: 2019-09
+    endDate: 2026-06 (expected)
