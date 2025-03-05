@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Curriculum Vitae"
+title: "{{ site.data.resume.basics.name }} - CV"
 permalink: /cv/
 ---
 
