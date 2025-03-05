@@ -5,7 +5,7 @@ slug: CV
 #permalink: /cv/
 ---
 
-# {{ site.data.resume.basics.name }}
+## Yoon Choi's Resume
 **{{ site.data.resume.basics.label }}**  
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }})
