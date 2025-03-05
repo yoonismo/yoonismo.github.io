@@ -1,7 +1,8 @@
 ---
 layout: page
-title: "{{ site.data.resume.basics.name }} - CV"
-permalink: /cv/
+title: CV
+slug: CV 
+#permalink: /cv/
 ---
 
 # {{ site.data.resume.basics.name }}
