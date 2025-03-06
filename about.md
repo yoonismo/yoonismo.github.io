@@ -1,6 +1,6 @@
 ---
 layout: about
-#image: /assets/img/blog/hydejack-9.jpg
+#image: /assets/img/blog/hydejack-9.jpg   # {{ site.data.resume.basics.name }}
 description: >
   A boutique Jekyll theme for hackers, nerds, and academics,
   with a focus on personal sites that are meant to impress.
@@ -15,9 +15,7 @@ redirect_from:
 
 ---
 
-## Curriculum Vitae
 
-# {{ site.data.resume.basics.name }}
 **{{ site.data.resume.basics.label }}**  
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }})
