@@ -32,16 +32,6 @@ Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.webs
 
 ---
 
-## Experience
-{% for job in site.data.resume.experience %}
-### {{ job.position }} at {{ job.company }}
-**{{ job.startDate }} - {{ job.endDate }}**  
-{{ job.summary }}
-
-{% endfor %}
-
----
-
 ## Education
 {% for edu in site.data.resume.education %}
 **{{ edu.studyType }} in {{ edu.area }}** - {{ edu.institution }}  
