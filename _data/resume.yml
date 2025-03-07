@@ -44,6 +44,15 @@ education:
     startDate: 2008-03
     endDate: 2016-08
 
+## Experience
+#{% for job in site.data.resume.experience %}
+### {{ job.position }} at {{ job.company }}
+#**{{ job.startDate }} - {{ job.endDate }}**  
+#{{ job.summary }}
+
+#{% endfor %}
+
+#---
 #experience:
 #  - company: ABC Corp
 #    position: Data Scientist
