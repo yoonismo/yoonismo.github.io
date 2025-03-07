@@ -26,19 +26,6 @@ skills:
   #    - TensorFlow
   #    - PyTorch
 
-experience:
-  - company: ABC Corp
-    position: Data Scientist
-    startDate: 2020-01-01
-    endDate: Present
-    summary: >
-      Built predictive models and conducted A/B testing.
-  - company: XYZ Inc
-    position: Data Analyst
-    startDate: 2017-01-01
-    endDate: 2019-12-31
-    summary: >
-      Analyzed large datasets and created dashboards.
 
 education:
   - institution: University of Washington
@@ -56,3 +43,17 @@ education:
     studyType: B.A. 
     startDate: 2008-03
     endDate: 2016-08
+
+#experience:
+#  - company: ABC Corp
+#    position: Data Scientist
+#    startDate: 2020-01-01
+#    endDate: Present
+#    summary: >
+#      Built predictive models and conducted A/B testing.
+#  - company: XYZ Inc
+#    position: Data Analyst
+#    startDate: 2017-01-01
+#    endDate: 2019-12-31
+#    summary: >
+#      Analyzed large datasets and created dashboards.

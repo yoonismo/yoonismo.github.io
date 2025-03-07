@@ -13,8 +13,6 @@ redirect_from:
 
 <!--author-->
 
----
-
 
 **{{ site.data.resume.basics.label }}**  
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
