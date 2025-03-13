@@ -17,7 +17,7 @@ redirect_from:
 **{{ site.data.resume.basics.label }}**  
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }})
-CV: Website: [{{ site.data.resume.basics.resume }}]({{ site.data.resume.basics.resume }})
+CV: [{{ site.data.resume.basics.resume }}]({{ site.data.resume.basics.resume }})
 
 ---
 
