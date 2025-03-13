@@ -3,7 +3,7 @@ layout: post
 title:  "[Groove Armada] At the River"
 date:   2025-03-13 11:28:12 -0800
 last_modified_at: 2025-03-13 11:28:12 -0800
-categories: Music
+categories: [blog,music]
 ---
 
 When I was in college, I used to listen to radio a lot. It was one of the habits I had before the bed. There was a radio program in 
