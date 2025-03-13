@@ -17,7 +17,7 @@ redirect_from:
 **{{ site.data.resume.basics.label }}**  
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }}) <br>
-[📄 **My Resume**](https://drive.google.com/file/d/1D0LfRVO3V96jPtwCT_cXDaK7nVUnwEzP/view?usp=sharing)  
+Resume: [My resume](https://drive.google.com/file/d/1D0LfRVO3V96jPtwCT_cXDaK7nVUnwEzP/view?usp=sharing)
 {:.no-hover.no-mark}
 
 ---
