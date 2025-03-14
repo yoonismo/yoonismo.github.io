@@ -8,9 +8,11 @@
     <li>
         <div class="menu-wrapper">
             {% if node.submenu %}
-            <button class="spread-btn" data-spread="{{ count | default: 0 }}">
-                <span id="spread-icon-{{ count | default: 0 }}" class="material-icons">arrow_drop_down</span>
-            </button>            
+            <button class="spread-btn" data-spread="{{ count }}">
+                <span id="spread-icon-{{ count }}" class="material-icons">arrow_drop_down</span>
+            </button>
+            
+            <input type="checkbox" id="folder-checkbox-{{ count }}" checked>
             {% endif %}
             <a
                     {% if forloop.first %}id="_drawer--opened"{% endif %}
