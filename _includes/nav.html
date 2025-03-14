@@ -11,12 +11,10 @@
             <button class="spread-btn" data-spread="{{ count }}">
                 <span id="spread-icon-{{ count }}" class="material-icons">arrow_drop_down</span>
             </button>
-            
-            <input type="checkbox" id="folder-checkbox-{{ count }}" checked>
             {% endif %}
             <a
                     {% if forloop.first %}id="_drawer--opened"{% endif %}
-                    href="{% include smart-url url=url %}"
+                    href="{% include_cached smart-url url=url %}"
                     class="sidebar-nav-item {% if node.external  %}external{% endif %}"
                     {% if node.rel %}rel="{{ node.rel }}"{% endif %}
             >
@@ -25,13 +23,13 @@
         </div>
         {% if node.submenu %}
         <div class="menu-wrapper">
-            <input type="checkbox" id="folder-checkbox-{{count}}" {% if node.default_open %}checked{% endif %}>
+            <input type="checkbox" id="folder-checkbox-{{ count }}" checked>
             <ul>
                 {% for subnode in node.submenu %}
                 <li>
                     <a
                             class="sidebar-nav-item {% if subnode.external  %}external{% endif %}"
-                            href="{% include_cached smart-url url=subnode.url | default:'#' %}"
+                            href="{% include_cached smart-url url=subnode.url %}"
                     >
                         {{ subnode.title }}
                     </a>
@@ -61,7 +59,7 @@
     </li>
     {% else %}
     <li>
-        <a href="{{ node.redirect_to | default:'#' }}" class="sidebar-nav-item external">{{ node.title }}</a>
+        <a href="{{ node.redirect_to }}" class="sidebar-nav-item external">{{ node.title }}</a>
     </li>
     {% endunless %}
     {% endfor %}

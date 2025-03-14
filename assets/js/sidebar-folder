@@ -2,18 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Find all spread buttons and attach click event listeners
     document.querySelectorAll(".spread-btn").forEach((button) => {
         button.addEventListener("click", function () {
-            const count = this.getAttribute("data-spread");  // Get `count` from data attribute
-            spread(count);  // Call your function
+            const count = this.getAttribute("data-spread");  // Get count from data attribute
+            spread(count);  // Call spread function
         });
     });
 });
 
-// Your existing spread function (no changes needed)
+// Your existing spread function (unchanged)
 function spread(count) {
-    document.getElementById('folder-checkbox-' + count).checked =
-        !document.getElementById('folder-checkbox-' + count).checked;
+    const checkbox = document.getElementById('folder-checkbox-' + count);
+    const icon = document.getElementById('spread-icon-' + count);
 
-    document.getElementById('spread-icon-' + count).innerHTML =
-        document.getElementById('spread-icon-' + count).innerHTML == 'arrow_drop_down' ?
-            'arrow_right' : 'arrow_drop_down';
+    if (checkbox && icon) {
+        checkbox.checked = !checkbox.checked;
+        icon.innerHTML = icon.innerHTML.trim() === 'arrow_drop_down' ? 'arrow_right' : 'arrow_drop_down';
+    } else {
+        console.error("Missing element for count:", count);
+    }
 }
