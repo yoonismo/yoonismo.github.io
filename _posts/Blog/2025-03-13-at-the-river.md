@@ -3,7 +3,7 @@ layout: post
 title:  "[Groove Armada] At the River"
 date:   2025-03-13 11:28:12 -0800
 last_modified_at: 2025-03-13 11:28:12 -0800
-categories: [Blog, Music]
+categories: Blog
 tag: [Music]
 ---
 
