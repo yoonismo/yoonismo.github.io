@@ -1,22 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Find all spread buttons and attach click event listeners
-    document.querySelectorAll(".spread-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-            const count = this.getAttribute("data-spread");  // Get count from data attribute
-            spread(count);  // Call spread function
-        });
-    });
-});
+function spread(count){
+    let submenu = document.getElementById('submenu-' + count);
+    if(submenu){
+        if(submenu.classList.contains('hide')) submenu.classList.remove('hide');
+        else submenu.classList.add('hide');
+    }
 
-// Your existing spread function (unchanged)
-function spread(count) {
-    const checkbox = document.getElementById('folder-checkbox-' + count);
-    const icon = document.getElementById('spread-icon-' + count);
-
-    if (checkbox && icon) {
-        checkbox.checked = !checkbox.checked;
-        icon.innerHTML = icon.innerHTML.trim() === 'arrow_drop_down' ? 'arrow_right' : 'arrow_drop_down';
-    } else {
-        console.error("Missing element for count:", count);
+    let spreadIcon = document.getElementById('spread-icon-' + count);
+    if(spreadIcon){
+        if(spreadIcon.innerHTML == 'arrow_right') {
+            spreadIcon.innerHTML = 'arrow_drop_down';
+            spreadIcon.style.color = 'grey';
+        }else{
+            spreadIcon.innerHTML = 'arrow_right';
+            spreadIcon.style.color = 'white';
+        } 
     }
 }

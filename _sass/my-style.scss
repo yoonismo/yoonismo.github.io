@@ -16,49 +16,38 @@
 
 
 
-//sidebar
 
-.sidebar-sticky {
-  height: 100%;
-  padding-top: 5%;
-  position: absolute;
-}
-.sidebar-about {
-  padding-bottom:10%;
-}
+
+
+// 메뉴
 .spread-btn{
-  left: 7%;
+  right: 15%;
   position: absolute;
   padding: 0;
-  padding-top: 5px;
+  padding-top: 2px;
   border: none;
   background: none;
   color: white;
   cursor: pointer;
+  z-index: 1;
 }
-
-.spread-btn:hover{
-  color: grey;
-}
-
-.menu-wrapper{
-  display: flex;
+.menu-wrapper {
   text-align: left;
-  margin-left: 10%;
-  margin-bottom: 0%;
-
-  input[type=checkbox]{
-    display: none;
-  }
-
-  input[type=checkbox] ~ ul{
-    display: none;
-    list-style: none;
-  }
-
-  input[type=checkbox]:checked ~ ul{
-    display: block;
+  margin-left: 30%;
+}
+.submenu.menu-wrapper{
+  right: 10%;
+  position: absolute;
+  background-color: rgb(34,31,32);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  width: 10rem;
+  z-index: 5;
+  ul{
+    margin: 0;
+    padding: 0 1.25rem;
   }
 }
-
-
+.submenu.menu-wrapper.hide{
+  display: none;
+}

@@ -1,67 +1,211 @@
-{% assign count = 0 %}
-<span class="sr-only">{{ site.data.strings.navigation | default:"Navigation" }}{{ site.data.strings.colon | default:":" }}</span>
+<span class="sr-only">Navigation:</span>
 <ul>
-    {% if site.menu %}
-    {% for node in site.menu %}
-    {% assign url = node.url | default: node.href %}
-    {% assign count = count | plus: 1 %}
-    <li>
-        <div class="menu-wrapper">
-            {% if node.submenu %}
-            <button class="spread-btn" data-spread="{{ count }}">
-                <span id="spread-icon-{{ count }}" class="material-icons">arrow_drop_down</span>
-            </button>
-            {% endif %}
-            <a
-                    {% if forloop.first %}id="_drawer--opened"{% endif %}
-                    href="{% include_cached smart-url url=url %}"
-                    class="sidebar-nav-item {% if node.external  %}external{% endif %}"
-                    {% if node.rel %}rel="{{ node.rel }}"{% endif %}
+  
+    
+      
+      <!-- 메뉴 각각을 식별하기위한 인덱스 -->
+      
+      <li>
+        <div class="menu-wrapper" onmouseover="javascript:spread(9)" onmouseout="javascript:spread(9)">
+           <!-- submenu 변수는 _config.yml 에서 추가합니다 -->
+          
+          <a
+            id="_drawer--opened"
+            href="/about/"
+            class="sidebar-nav-item "
+            
             >
-                {{ node.name | default:node.title }}
-            </a>
-        </div>
-        {% if node.submenu %}
-        <div class="menu-wrapper">
-            <input type="checkbox" id="folder-checkbox-{{ count }}" checked>
-            <ul>
-                {% for subnode in node.submenu %}
-                <li>
-                    <a
-                            class="sidebar-nav-item {% if subnode.external  %}external{% endif %}"
-                            href="{% include_cached smart-url url=subnode.url %}"
-                    >
-                        {{ subnode.title }}
-                    </a>
-                </li>
-                {% endfor %}
+            About
+          </a>
+        
+          
+       </div>
+      </li>
+    
+      
+      <!-- 메뉴 각각을 식별하기위한 인덱스 -->
+      
+      <li>
+        <div class="menu-wrapper" onmouseover="javascript:spread(10)" onmouseout="javascript:spread(10)">
+           <!-- submenu 변수는 _config.yml 에서 추가합니다 -->
+          
+          <a
+            
+            href="/project/"
+            class="sidebar-nav-item "
+            
+            >
+            Project
+          </a>
+        
+          
+       </div>
+      </li>
+    
+      
+      <!-- 메뉴 각각을 식별하기위한 인덱스 -->
+      
+      <li>
+        <div class="menu-wrapper" onmouseover="javascript:spread(11)" onmouseout="javascript:spread(11)">
+           <!-- submenu 변수는 _config.yml 에서 추가합니다 -->
+          
+            <!-- spread 함수는 js 파일로 작성하고 my-head.html에 추가합니다 -->
+            <!-- spread-btn class는 my-style.scss에 추가합니다. -->
+          <button class="spread-btn">
+                <!-- marterial stylesheet를 my-head.html에 추가합니다 -->
+              <span id="spread-icon-11" class="material-icons">arrow_right</span>
+          </button>
+          
+          <a
+            
+            href="/study/"
+            class="sidebar-nav-item "
+            
+            >
+            Study
+          </a>
+        
+          
+          <div id="submenu-11" class="menu-wrapper submenu hide">
+            <ul style="list-style: none;">
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/papers/"
+                  >
+                  Papers
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/library/"
+                  >
+                  Library
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/mldl/"
+                  >
+                  MLDL
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/codingtest/"
+                  >
+                  CodingTest
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/python/"
+                  >
+                  Python
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/study-etc/"
+                  >
+                  Study-etc
+                </a>
+              </li>
+            
             </ul>
-        </div>
-        {% endif %}
-    </li>
-    {% endfor %}
-    {% else %}
-    {% assign pages = site.pages | where: "menu", true %}
-    {% assign documents = site.documents | where: "menu", true %}
-    {% assign nodes = pages | concat: documents | sort: "order" %}
-
-    {% for node in nodes %}
-    {% unless node.redirect_to %}
-    <li>
-        <a
-                {% if forloop.first %}id="_navigation"{% endif %}
-                href="{{ node.url | relative_url }}"
-                class="sidebar-nav-item"
-                {% if node.rel %}rel="{{ node.rel }}"{% endif %}
-        >
-            {{ node.title }}
-        </a>
-    </li>
-    {% else %}
-    <li>
-        <a href="{{ node.redirect_to }}" class="sidebar-nav-item external">{{ node.title }}</a>
-    </li>
-    {% endunless %}
-    {% endfor %}
-    {% endif %}
+          </div>
+          
+       </div>
+      </li>
+    
+      
+      <!-- 메뉴 각각을 식별하기위한 인덱스 -->
+      
+      <li>
+        <div class="menu-wrapper" onmouseover="javascript:spread(12)" onmouseout="javascript:spread(12)">
+           <!-- submenu 변수는 _config.yml 에서 추가합니다 -->
+          
+            <!-- spread 함수는 js 파일로 작성하고 my-head.html에 추가합니다 -->
+            <!-- spread-btn class는 my-style.scss에 추가합니다. -->
+          <button class="spread-btn">
+                <!-- marterial stylesheet를 my-head.html에 추가합니다 -->
+              <span id="spread-icon-12" class="material-icons">arrow_right</span>
+          </button>
+          
+          <a
+            
+            href="/blog/"
+            class="sidebar-nav-item "
+            
+            >
+            Blog
+          </a>
+        
+          
+          <div id="submenu-12" class="menu-wrapper submenu hide">
+            <ul style="list-style: none;">
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/daily/"
+                  >
+                  Daily
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/travel/"
+                  >
+                  Travel
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/aiblog/"
+                  >
+                  AIblog
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/blog-etc/"
+                  >
+                  Blog-etc
+                </a>
+              </li>
+            
+              <li>
+                <a
+                  class="sidebar-nav-item "
+                  href="/githubpages/"
+                  >
+                  GithubPages
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+          
+       </div>
+      </li>
+    
+  
 </ul>
