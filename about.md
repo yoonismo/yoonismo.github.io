@@ -36,7 +36,14 @@ Resume: [My resume](https://drive.google.com/file/d/1D0LfRVO3V96jPtwCT_cXDaK7nVU
 
 ## Education
 {% for edu in site.data.resume.education %}
-**{{ edu.studyType }} in {{ edu.area }}** - {{ edu.institution }}  
-**{{ edu.startDate }} - {{ edu.endDate }}**
+**{{ edu.studyType }} in {{ edu.area }}** - {{ edu.institution }}
+{% if edu.studyType contains 'Ph.D' or edu.studyType contains 'PhD' %}
+{%- assign expected_date = edu.endExpected | default: edu.endDate -%}
+{% if expected_date %}
+  
+**{{ expected_date }} (expected)**
+{% endif %}
+{% endif %}
 
 {% endfor %}
+

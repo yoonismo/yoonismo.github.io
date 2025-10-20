@@ -32,7 +32,9 @@ education:
     area: Economics
     studyType: Ph.D. 
   #  startDate: 2019-09
-    endDate: 2026-06 (expected)
+  #  endDate: 2026-06 (expected)
+    endExpected: 2026-06
+    show_expected_only: true 
   - institution: Georgia State University
     area: Mathematics and Statistics
     studyType: M.S.
