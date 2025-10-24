@@ -8,8 +8,15 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Hi! My name is Yoon! Welcome to my blog! I am an econometrician who studies efficient and fast network estimation algorithms. 
-    I am also interested in (non)convex programming. During my downtime I listen to music from jazz to British Indie music. Music is my life! 
+    Hi! My name is Yoon! Welcome to my blog! 
+    I am a PhD candidate in Economics at University of Washington (UW). My current research focuses on 
+    estimation of network formation models, casual inference on social networks and development of quantile regression 
+    estimator for handling missing data. I am also interested in (non)convex optimization.
+    
+    Before coming to UW, I earned a BA in Spanish Language and Literature at Korea University, 
+    and a MS at Georgia State University.
+    
+    During my downtime I listen to music from jazz to British Indie music. Music is my life! 
   # This photo will be used in the about section
   picture:
     path:            /assets/img/profile_jpg.jpg

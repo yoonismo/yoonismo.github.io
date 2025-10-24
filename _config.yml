@@ -398,6 +398,8 @@ compress_html:
 sass:
   style:               compressed
 
+
+
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------
 
@@ -427,3 +429,7 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
+
+
+styles:
+  - /assets/css/custom.css
