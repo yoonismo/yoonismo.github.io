@@ -431,5 +431,4 @@ jekyll_compose:
           url: https://example.com
 
 
-styles:
   - /assets/css/custom.css
