@@ -60,7 +60,7 @@ img.u-photo {
   height: 160px;        /* 가로=세로 */
   aspect-ratio: 1 / 1;
   object-fit: cover;    /* 중앙 꽉 채우기 */
-  border-radius: 50%;
+  border-radius: 0%;
   clip-path: none;
 }
 
