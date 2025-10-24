@@ -48,24 +48,6 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     }()
   });
 </script>
-<script>
-  document.getElementById('_pushState').addEventListener('hy-push-state-after', function () {
-    // 포스트 헤더/메타에 있는 날짜 후보들을 모두 제거
-    var selectors = [
-      'time.dt-published',
-      '.post-meta time',
-      '.article__meta time',
-      '.page__meta time',
-      'time[datetime]',
-      '[itemprop="datePublished"]'
-    ];
-    try {
-      document.querySelectorAll(selectors.join(',')).forEach(function(el){ el.remove(); });
-    } catch (err) {
-      (console.error ? console.error : console.log).call(console, err);
-    }
-  });
-</script>
 
 {% comment %}
 <!--
@@ -107,5 +89,36 @@ Example code for using Matamo as alternative analytics solution.
 
   window.loadJSDeferred('{{site.matomo_analytics.root}}piwik.js');
 </script>
+
+<script>
+  // 날짜 숨기기 함수 (초기 로드 + SPA 네비게이션 모두 대응)
+  function hidePostDates() {
+    try {
+      var selectors = [
+        'time.dt-published',
+        '.post-meta time',
+        '.article__meta time',
+        '.page__meta time',
+        'time[datetime]',
+        '[itemprop="datePublished"]'
+      ];
+      document.querySelectorAll(selectors.join(',')).forEach(function (el) {
+        el.remove();
+      });
+    } catch (err) {
+      (console.error ? console.error : console.log).call(console, err);
+    }
+  }
+
+  // 첫 페이지 로드시 한 번
+  document.addEventListener('DOMContentLoaded', hidePostDates);
+
+  // Hydejack SPA 전환 후에도 반영
+  var ps = document.getElementById('_pushState');
+  if (ps) {
+    ps.addEventListener('hy-push-state-after', hidePostDates);
+  }
+</script>
+
 {% endif %}
 {% endcomment %}
