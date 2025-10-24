@@ -50,4 +50,13 @@ Resume: [My resume](https://drive.google.com/file/d/1cgfcZZtYk_E52mZruIuSu61PIR2
 
 {% endfor %}
 
+<style>
+.author,
+.author__image,
+.author__avatar,
+.about .about-profile,
+.about .author-box,
+.about figure,
+.about .u-photo { outline: 3px solid lime !important; }
+</style>
 
