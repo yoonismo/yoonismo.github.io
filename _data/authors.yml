@@ -1,8 +1,8 @@
 # The primary author of this blog.
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
-layout: about
-title: About
+#layout: about
+#title: About
 author1:
   name:              Yoon Choi
   email:             <mail@domain.tld>
