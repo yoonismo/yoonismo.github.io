@@ -19,7 +19,7 @@ Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.e
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }}) <br>
 Resume: [My resume](https://drive.google.com/file/d/1cgfcZZtYk_E52mZruIuSu61PIR2heC0i/view?usp=drive_link)
 {:.no-hover.no-mark}
-
+Paper: [Job Market Paper](https://drive.google.com/file/d/1X1SEvRoj8zvF2dooqbF3tHw0ci-O-o-W/view?usp=drive_link){:.no-hover.no-mark}
 ---
 
 ## Summary
@@ -50,13 +50,5 @@ Resume: [My resume](https://drive.google.com/file/d/1cgfcZZtYk_E52mZruIuSu61PIR2
 
 {% endfor %}
 
-<style>
-.author,
-.author__image,
-.author__avatar,
-.about .about-profile,
-.about .author-box,
-.about figure,
-.about .u-photo { outline: 3px solid lime !important; }
-</style>
+
 
