@@ -27,12 +27,6 @@ title:                 Let it be
 description:           >
   Yoon's blog
 
-kramdown:
-  input: GFM                            # ← 이 줄 추가
-  math_engine:         mathjax
-  math_engine_opts:    {}
-  footnote_backlink:   '&#x21a9;&#xfe0e;'
-
 # A shorter description for the sidebar.
 tagline: Relentless perserverance
 
@@ -183,6 +177,7 @@ defaults:
         type:          WebPage
 
 kramdown:
+  input: GFM
   math_engine:         mathjax
   math_engine_opts:    {}
   footnote_backlink:   '&#x21a9;&#xfe0e;'
