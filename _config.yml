@@ -27,6 +27,12 @@ title:                 Let it be
 description:           >
   Yoon's blog
 
+kramdown:
+  input: GFM                            # ← 이 줄 추가
+  math_engine:         mathjax
+  math_engine_opts:    {}
+  footnote_backlink:   '&#x21a9;&#xfe0e;'
+
 # A shorter description for the sidebar.
 tagline: Relentless perserverance
 
@@ -197,7 +203,7 @@ hydejack:
   no_mark_external:    false
 
   # Set to `true` if third party plugins fail to work with dynamically loaded pages
-  no_push_state:       false
+  no_push_state:       true
 
   # Set to `true` if you want to disable the drawer
   no_drawer:           false
@@ -431,4 +437,4 @@ jekyll_compose:
           url: https://example.com
 
 
-  - /assets/css/custom.css
+ 
