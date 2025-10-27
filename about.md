@@ -18,7 +18,7 @@ redirect_from:
 Email: [{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})  
 Website: [{{ site.data.resume.basics.website }}]({{ site.data.resume.basics.website }})  
 Resume: [My resume](https://drive.google.com/file/d/1cgfcZZtYk_E52mZruIuSu61PIR2heC0i/view?usp=drive_link){: .no-hover .no-mark target="_blank" rel="noopener" }  
-Paper: [Job Market Paper](https://drive.google.com/file/d/1XBLUMIWzEry0KAoDZCYWpYMtcQhADG3U/view?usp=drive_link){: .no-hover .no-mark target="_blank" rel="noopener" }
+Paper: [Job Market Paper](https://drive.google.com/file/d/1zQOC1zfzqF3oBoMoabNVKflWkLAUYvHc/view?usp=drive_link){: .no-hover .no-mark target="_blank" rel="noopener" }
 
 ---
 
