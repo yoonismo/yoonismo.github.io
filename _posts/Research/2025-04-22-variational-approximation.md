@@ -1,10 +1,43 @@
 ---
 layout: post
-title:  "[Estimation Algorithm] Variational Bi-level Estimation for Exponential Random Graph Models"
+title:  "[Estimation Algorithm] Variational Regularized Bilevel Estimation for Exponential Random Graph Models"
 date:   2025-04-22 16:36:00 -0800
 last_modified_at: 2025-10-19 01:15:00 -0800
 categories: Research
-tag: [ERGM, Variational Approximation, Bi-level Optimization]
+tag: [ERGM, Variational Approximation, Bilevel Optimization]
 ---
 
-Empirical studies of social networks often focus on higher-order interdependencies such as centralization and clustering. Exponential Random Graph model (ERGM) is a popular and versatile statistical parametric model that allows estimation of interdependency terms such as $k-$stars and triangles. Estimation of ERGM is challenging due to two aspects: the intractable normalizing constant and model degeneracy. We propose a variational bilevel estimation algorithm of ERGM that addresses both dilemmas. It mitigates the intractability of normalizing constant by a mean-field approximation. In addition, adoption of $\ell_2$ (Tikhonov) regularization facilitates finding a unique solution to the mean-field approximation problem. We also provide a non-asymptotic convergence analysis of stationary points obtained by our proposed algorithm under mild regularity conditions. Through Monte Carlo simulations, we demonstrate our method's effectiveness over existing MCMC-based algorithms and variational baseline and study the sensitivity of hyperparameter choices to objective values, offering a practical guide for implementation.
+I propose an estimation algorithm for Exponential Random Graph Models (ERGM),
+a popular statistical network model for estimating the structural parameters of strategic
+
+network formation in economics and finance. Existing methods often produce unreli-
+able estimates of parameters for the triangle, a key network structure that captures the
+
+tendency of two persons with shared friends to connect. Such unreliable estimates may
+lead to untrustworthy policy recommendations for networks with triangles. Through
+
+a variational mean-field approach, my algorithm addresses the two well-known diffi-
+culties when estimating the ERGM, the intractability of its normalizing constant and
+
+model degeneracy. In addition, I introduce l2 regularization that ensures a unique
+solution to the mean-field approximation problem under suitable conditions. I provide
+a non-asymptotic optimization convergence rate analysis for my proposed algorithm
+under mild regularity conditions. Through Monte Carlo simulations, I demonstrate
+that my method achieves 100% sign recovery rate for triangle parameters for small and
+mid-sized networks under perturbed initialization, compared to a 50% rate for existing
+algorithms. I provide the sensitivity analysis of estimates of ERGM parameters to
+hyperparameter choices, offering practical insights for implementation.
+
+<p>
+  <a href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+     target="_blank" rel="noopener">
+    📄 PDF 열기(새 탭)
+  </a>
+</p>
+
+<div class="video-16x9">
+  <iframe
+    src="https://drive.google.com/file/d/FILE_ID/preview"
+    loading="lazy" allow="autoplay" allowfullscreen>
+  </iframe>
+</div>
