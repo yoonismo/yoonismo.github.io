@@ -27,17 +27,3 @@ that my method achieves 100% sign recovery rate for triangle parameters for smal
 mid-sized networks under perturbed initialization, compared to a 50% rate for existing
 algorithms. I provide the sensitivity analysis of estimates of ERGM parameters to
 hyperparameter choices, offering practical insights for implementation.
-
-<p>
-  <a href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
-     target="_blank" rel="noopener">
-    📄 PDF 열기(새 탭)
-  </a>
-</p>
-
-<div class="video-16x9">
-  <iframe
-    src="https://drive.google.com/file/d/FILE_ID/preview"
-    loading="lazy" allow="autoplay" allowfullscreen>
-  </iframe>
-</div>

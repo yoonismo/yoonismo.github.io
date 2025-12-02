@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Missing Data] Wasserstein Distributionally Robust Linear Quantile Regression on Missing Data"
+title:  "[Missing Data] Wasserstein Distributionally Robust Linear Quantile Regression on Missing Data (with Yanqin Fan and Gaoqian Xu)"
 date:   2023-04-22 14:22:00 -0800
 last_modified_at: 2025-10-19 01:16:00 -0800
 categories: Research
