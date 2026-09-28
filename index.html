@@ -1,11 +1,537 @@
----
-layout: blog
-title: Blog
-description: >
-  The official Hydejack blog. Version updates, example content and how-to guides on how to blog with Jekyll.
-last_modified_at: 2018-08-03
-no_link_title: false 
-no_excerpt: false 
-hide_image: false
-cover: true
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Yoon Choi">
+<meta name="description" content="Yoon Choi is a Ph.D. candidate in economics at the University of Washington. He builds estimators for economic network data and distributionally robust estimators for missing data.">
+<link rel="canonical" href="https://yoonismo.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yoonismo.github.io/">
+<meta property="og:site_name" content="Yoon Choi">
+<meta property="og:title" content="Yoon Choi | Ph.D. Candidate in Economics, University of Washington">
+<meta property="og:description" content="Job market paper: Variational Regularized Bilevel Estimation for Exponential Random Graph Models. Research on network formation, causal inference under interference, and distributionally robust estimation.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yoon Choi | Ph.D. Candidate in Economics, University of Washington">
+<meta name="twitter:description" content="Job market paper: Variational Regularized Bilevel Estimation for Exponential Random Graph Models.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2327496D'/%3E%3Cg fill='%23FAFAF9'%3E%3Ccircle cx='10' cy='11' r='2.6'/%3E%3Ccircle cx='22' cy='9' r='2.6'/%3E%3Ccircle cx='16' cy='21' r='2.6'/%3E%3C/g%3E%3Cg stroke='%23FAFAF9' stroke-width='1.3' opacity='.75'%3E%3Cpath d='M10 11 L22 9 L16 21 Z' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+
+<style>
+:root{color-scheme:light dark}
+html{-webkit-text-size-adjust:100%}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Yoon Choi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --bg:#FAFAF9;
+  --surface:#FFFFFF;
+  --rail:#F3F4F2;
+  --ink:#1B1E24;
+  --ink-2:#3C424D;
+  --muted:#6B7280;
+  --faint:#9AA0AA;
+  --line:#E3E5E4;
+  --line-2:#D3D6D6;
+  --accent:#27496D;
+  --accent-2:#3D6A99;
+  --accent-wash:#EBF0F6;
+  --brass:#8A6A34;
+  --brass-wash:#F5EFE3;
+  --focus:#3D6A99;
+
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+
+  --maxw:1150px;
+  --rad:4px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171B; --surface:#1A1E23; --rail:#1E2329;
+    --ink:#E8EAE7; --ink-2:#C3C8CD; --muted:#9198A2; --faint:#6E757F;
+    --line:#2A2F36; --line-2:#3A4048;
+    --accent:#8FB6DE; --accent-2:#A8C8E8; --accent-wash:#1D2731;
+    --brass:#C9A667; --brass-wash:#26221A; --focus:#8FB6DE;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171B; --surface:#1A1E23; --rail:#1E2329;
+  --ink:#E8EAE7; --ink-2:#C3C8CD; --muted:#9198A2; --faint:#6E757F;
+  --line:#2A2F36; --line-2:#3A4048;
+  --accent:#8FB6DE; --accent-2:#A8C8E8; --accent-wash:#1D2731;
+  --brass:#C9A667; --brass-wash:#26221A; --focus:#8FB6DE;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--f-body);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+a:hover{color:var(--accent-2);border-bottom-color:var(--accent-2)}
+a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.005em}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:20}
+.masthead-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:58px;
+}
+.brand{font-family:var(--f-display);font-size:17px;font-weight:600;color:var(--ink);border:0;white-space:nowrap}
+.brand span{color:var(--faint);font-family:var(--f-mono);font-size:11px;font-weight:400;
+  letter-spacing:.08em;text-transform:uppercase;margin-left:10px}
+nav.tabs{display:flex;gap:2px;flex-wrap:wrap}
+nav.tabs button{
+  font-family:var(--f-body);font-size:14px;font-weight:500;color:var(--muted);
+  background:none;border:0;border-bottom:2px solid transparent;
+  padding:18px 13px 16px;cursor:pointer;line-height:1;
+}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs button:focus-visible{outline:2px solid var(--focus);outline-offset:-4px;border-radius:2px}
+
+/* ---------- shell ---------- */
+.shell{
+  max-width:var(--maxw);margin:0 auto;padding:38px 28px 90px;
+  display:grid;grid-template-columns:250px 1fr;gap:52px;align-items:start;
+}
+@media (max-width:880px){.shell{grid-template-columns:1fr;gap:34px;padding:26px 22px 70px}}
+
+/* ---------- profile rail ---------- */
+.rail{position:sticky;top:82px;display:flex;flex-direction:column;gap:20px}
+@media (max-width:880px){.rail{position:static}}
+.mark{
+  width:100%;aspect-ratio:16/10;border-radius:var(--rad);overflow:hidden;
+  background:var(--rail);border:1px solid var(--line);display:block;
+}
+.mark svg{width:100%;height:100%;display:block}
+.rail-name{font-family:var(--f-display);font-size:24px;line-height:1.2;font-weight:600}
+.rail-role{font-size:14px;color:var(--ink-2);line-height:1.5;margin-top:6px}
+.rail-role em{font-style:normal;color:var(--muted)}
+.meta{list-style:none;margin:0;padding:16px 0 0;display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--line)}
+.meta li{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:13.5px;align-items:baseline}
+.meta .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.meta .v{color:var(--ink-2);overflow-wrap:anywhere}
+.meta a{border-bottom-color:transparent}
+.meta a:hover{border-bottom-color:var(--accent-2)}
+.cv-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-size:13.5px;font-weight:500;padding:10px 14px;
+  border:1px solid var(--line-2);border-radius:var(--rad);color:var(--ink);background:var(--surface);
+}
+.cv-btn:hover{border-color:var(--accent);color:var(--accent)}
+.cv-btn .arr{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
+.cv-btn:hover .arr{color:var(--accent)}
+
+/* ---------- main ---------- */
+main{min-width:0}
+.page{display:none}
+.page.on{display:block;animation:fade .28s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page.on{animation:none}}
+
+section+section{margin-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:19px;font-weight:600}
+.sec-head .count{font-family:var(--f-mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+
+.lede{font-family:var(--f-display);font-size:19.5px;line-height:1.55;color:var(--ink);max-width:62ch;margin:0 0 18px}
+
+/* home intro with portrait */
+.intro{display:grid;grid-template-columns:1fr 208px;gap:40px;align-items:start}
+.intro-text{min-width:0}
+.portrait{
+  margin:0;width:100%;aspect-ratio:4/5;border-radius:var(--rad);overflow:hidden;
+  background:var(--rail);border:1px solid var(--line);display:grid;place-items:center;
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait-ph{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);text-align:center;line-height:1.9;
+}
+.portrait-ph .sub{display:block;font-size:10px;color:var(--line-2)}
+@media (max-width:780px){
+  .intro{grid-template-columns:1fr;gap:26px}
+  .portrait{max-width:186px}
+}
+.prose{max-width:65ch;color:var(--ink-2)}
+.prose p{margin:0 0 14px}
+.prose p:last-child{margin-bottom:0}
+
+/* interests */
+.interests{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.interests li{background:var(--surface);padding:13px 16px;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:baseline}
+.interests .n{font-family:var(--f-mono);font-size:11px;color:var(--faint)}
+.interests .t{font-size:14.5px;color:var(--ink)}
+.interests .t small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+/* papers */
+.papers{display:flex;flex-direction:column}
+.paper{padding:22px 0;border-bottom:1px solid var(--line)}
+.paper:first-child{padding-top:4px}
+.paper:last-child{border-bottom:0}
+.paper .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:7px}
+.chip{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  padding:3px 8px;border-radius:2px;line-height:1.4}
+.chip.jmp{background:var(--accent);color:var(--surface)}
+.chip.wp{background:var(--accent-wash);color:var(--accent)}
+.chip.wip{background:var(--brass-wash);color:var(--brass)}
+.paper h3{font-size:17.5px;line-height:1.35;margin-bottom:5px}
+.paper h3 a{color:var(--ink);border-bottom-color:transparent}
+.paper h3 a:hover{color:var(--accent);border-bottom-color:var(--accent-2)}
+.authors{font-size:13.5px;color:var(--muted);margin:0 0 9px}
+.authors b{font-weight:600;color:var(--ink-2)}
+.abs{font-size:14.5px;line-height:1.62;color:var(--ink-2);max-width:66ch;margin:0}
+.abs.clip{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.paper .links{margin-top:11px;display:flex;gap:16px;flex-wrap:wrap;font-size:13px}
+
+/* wip list */
+.wip{list-style:none;margin:0;padding:0}
+.wip li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);
+  display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:baseline;line-height:1.5}
+.wip li:last-child{border-bottom:0}
+.wip .n{font-family:var(--f-mono);font-size:11px;color:var(--faint)}
+.wip small{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+
+/* dated rows */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:1fr 168px;gap:24px;padding:13px 0;
+  border-bottom:1px solid var(--line);align-items:baseline}
+.rows li:last-child{border-bottom:0}
+.rows .when{font-family:var(--f-mono);font-size:12px;color:var(--faint);
+  font-variant-numeric:tabular-nums;letter-spacing:.01em;text-align:right;line-height:1.45}
+.rows .what strong{display:block;font-size:15px;font-weight:600;color:var(--ink);font-family:var(--f-display);line-height:1.35}
+.rows .what span{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+@media (max-width:620px){
+  .rows li{grid-template-columns:1fr;gap:3px}
+  .rows .when{text-align:left;margin-top:3px}
+}
+
+/* course rows */
+.role-label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--brass);margin:24px 0 4px;font-weight:500}
+.role-label:first-child{margin-top:0}
+.courses{list-style:none;margin:0;padding:0}
+.courses li{display:grid;grid-template-columns:76px 1fr 168px;gap:16px;padding:11px 0;
+  border-bottom:1px solid var(--line);align-items:baseline}
+.courses li:last-child{border-bottom:0}
+.courses .code{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.01em}
+.courses .name{font-size:14.5px;color:var(--ink);line-height:1.45}
+.courses .name em{font-style:normal;color:var(--faint);font-size:13px}
+.courses .terms{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);text-align:right;line-height:1.5}
+@media (max-width:620px){
+  .courses li{grid-template-columns:76px 1fr;gap:6px 14px}
+  .courses .terms{grid-column:1/-1;text-align:left}
+}
+
+/* grids */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.grid2 > div{background:var(--surface);padding:15px 17px}
+.grid2 h4{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);font-weight:400;margin-bottom:8px}
+.grid2 p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.6}
+
+/* news */
+.news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.news li{display:grid;grid-template-columns:78px 1fr;gap:16px;font-size:14.5px;align-items:baseline}
+.news .d{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.news .x{color:var(--ink-2)}
+
+/* teaching interests */
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.tags span{font-size:13px;color:var(--ink-2);background:var(--rail);border:1px solid var(--line);
+  padding:4px 10px;border-radius:2px;line-height:1.4}
+
+.note{font-size:13.5px;color:var(--muted);margin:14px 0 0;max-width:62ch}
+
+footer{border-top:1px solid var(--line);margin-top:60px;padding-top:18px;font-size:12.5px;
+  color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted);border-bottom-color:transparent}
+footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="#" data-go="home">Yoon Choi<span>Econometrics</span></a>
+    <nav class="tabs" aria-label="Sections">
+      <button data-go="home" aria-current="page">Home</button>
+      <button data-go="research">Research</button>
+      <button data-go="teaching">Teaching</button>
+      <button data-go="cv">CV</button>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div class="mark">
+      <svg viewBox="0 0 200 125" role="img" aria-label="A small network whose nodes close into triangles">
+        <g stroke="var(--line-2)" stroke-width="1.1" fill="none">
+          <path d="M34 44 L76 24 L112 54 Z"/>
+          <path d="M112 54 L160 30 L158 86 Z"/>
+          <path d="M34 44 L56 98 L104 90 Z"/>
+          <path d="M104 90 L112 54"/>
+          <path d="M104 90 L158 86"/>
+          <path d="M112 54 L34 44"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="34" cy="44" r="4"/><circle cx="76" cy="24" r="4"/>
+          <circle cx="112" cy="54" r="5.5"/><circle cx="160" cy="30" r="4"/>
+          <circle cx="56" cy="98" r="4"/><circle cx="104" cy="90" r="4"/>
+          <circle cx="158" cy="86" r="4"/>
+        </g>
+      </svg>
+    </div>
+
+    <div>
+      <div class="rail-name">Yoon Choi</div>
+      <div class="rail-role">Ph.D. Candidate in Economics<br><em>University of Washington</em></div>
+    </div>
+
+    <ul class="meta">
+      <li><span class="k">Email</span><span class="v"><a href="mailto:lemineml@uw.edu">lemineml@uw.edu</a></span></li>
+      <li><span class="k">Ph.D.</span><span class="v">Expected June 2027</span></li>
+      <li><span class="k">Fields</span><span class="v">Econometrics, Networks</span></li>
+      <li><span class="k">Code</span><span class="v"><a href="https://github.com/yoonismo">GitHub</a></span></li>
+    </ul>
+
+    <a class="cv-btn" href="#" data-go="cv">Curriculum Vitae <span class="arr">→</span></a>
+  </aside>
+
+  <main>
+
+    <!-- ================= HOME ================= -->
+    <div class="page on" id="home">
+      <section class="intro">
+        <div class="intro-text">
+          <p class="lede">I am a Ph.D. candidate in Economics at the University of Washington, expecting to graduate in June 2027. I build estimators for economic network data. I also develop distributionally robust estimators for missing data.</p>
+          <div class="prose">
+            <p>Before joining the Ph.D. program in economics at the University of Washington, Seattle, I completed a master's in mathematics and statistics at Georgia State and a bachelor's in Spanish language and literature at Korea University. I also worked as a research intern at UN ECLAC in Santiago.</p>
+          </div>
+        </div>
+        <figure class="portrait">
+          <div class="portrait-ph">
+            <span>Photo</span>
+            <span class="sub">to be added</span>
+          </div>
+        </figure>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Research interests</h2></div>
+        <ul class="interests">
+          <li><span class="n">01</span><span class="t">Estimation of network formation models<small>Exponential random graph models, variational mean-field approximation, model degeneracy</small></span></li>
+          <li><span class="n">02</span><span class="t">Causal inference on networks<small>Partial interference, spillover effects, sensitivity to unobserved cross-unit confounding</small></span></li>
+          <li><span class="n">03</span><span class="t">Distributionally robust optimization<small>Wasserstein ambiguity sets, quantile regression under departures from missing-at-random</small></span></li>
+          <li><span class="n">04</span><span class="t">Non-convex and bilevel optimization<small>Regularization for uniqueness, non-asymptotic convergence rates, HPC implementation</small></span></li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Job market paper</h2></div>
+        <div class="papers">
+          <article class="paper">
+            <div class="top"><span class="chip jmp">Job market paper</span><span class="yr">arXiv:2512.07176</span></div>
+            <h3><a href="https://arxiv.org/abs/2512.07176">Variational Regularized Bilevel Estimation for Exponential Random Graph Models</a></h3>
+            <p class="abs clip">Existing methods for the exponential random graph model produce unreliable estimates of the triangle parameter, the structure that captures the tendency of two people with shared friends to connect. Such estimates can lead to untrustworthy policy recommendations for networks with triangles. A variational mean-field approach with L2 regularization addresses both the intractable normalizing constant and model degeneracy, and comes with a non-asymptotic convergence rate under mild regularity conditions.</p>
+            <div class="links"><a href="https://arxiv.org/abs/2512.07176">arXiv</a><a href="#" data-go="research">Full abstract →</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Talks on the job market paper</h2><span class="count">2026</span></div>
+        <ul class="rows">
+          <li><span class="what"><strong>Microeconometrics Class of 2026 Conference</strong><span>Duke University · Durham, NC</span></span><span class="when">Sep 2026</span></li>
+          <li><span class="what"><strong>Western Economic Association International</strong><span>101st Annual Conference · Denver, CO</span></span><span class="when">Jun 2026</span></li>
+          <li><span class="what"><strong>NetSci 2026</strong><span>Statistical Inference for Network Models symposium · Boston, MA</span></span><span class="when">Jun 2026</span></li>
+        </ul>
+        <p class="note">The full list of talks, including department seminars and brownbags, is on the <a href="#" data-go="cv">CV</a>.</p>
+      </section>
+    </div>
+
+    <!-- ================= RESEARCH ================= -->
+    <div class="page" id="research">
+      <section>
+        <div class="sec-head"><h2>Job market paper</h2></div>
+        <div class="papers">
+          <article class="paper">
+            <div class="top"><span class="chip jmp">Job market paper</span><span class="yr">arXiv:2512.07176</span></div>
+            <h3>Variational Regularized Bilevel Estimation for Exponential Random Graph Models</h3>
+            <p class="abs">The exponential random graph model (ERGM) is a popular statistical network model for estimating the structural parameters of strategic network formation in economics and finance. Existing methods often produce unreliable estimates of parameters for the triangle, a key network structure that captures the tendency of two persons with shared friends to connect; such estimates may lead to untrustworthy policy recommendations for networks with triangles. Through a variational mean-field approach, my algorithm addresses the two well-known difficulties in estimating the ERGM, the intractability of its normalizing constant and model degeneracy. I introduce L2 regularization that ensures a unique solution to the mean-field approximation problem, and provide a non-asymptotic convergence rate analysis under mild regularity conditions. In Monte Carlo simulations the method achieves a 100% sign recovery rate for triangle parameters in small and mid-sized networks under perturbed initialization, compared with 50% for existing algorithms. A sensitivity analysis of the ERGM parameter estimates to hyperparameter choices offers practical guidance for implementation.</p>
+            <div class="links"><a href="https://arxiv.org/abs/2512.07176">arXiv abstract</a><a href="https://arxiv.org/pdf/2512.07176">PDF</a></div>
+            <p class="note">Presented at NetSci 2026 (Boston), the WEAI 101st Annual Conference (Denver), and the Microeconometrics Class of 2026 Conference (Duke).</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Current project</h2></div>
+        <div class="papers">
+          <article class="paper">
+            <div class="top"><span class="chip wip">In development</span><span class="yr">2026 –</span></div>
+            <h3>Sensitivity Analysis of Causal and Spillover Effects to Unobserved Cross-Unit Confounding under Partial Interference</h3>
+            <p class="abs">Draft in preparation. Please get in touch if you would like to hear more about this project.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Work in progress</h2></div>
+        <div class="papers">
+          <article class="paper">
+            <div class="top"><span class="chip wip">Work in progress</span></div>
+            <h3>Wasserstein Distributionally Robust Estimation in Linear Quantile Regression with Missing Data</h3>
+            <p class="authors">with <b>Yanqin Fan</b> and <b>Gaoqian Xu</b></p>
+            <p class="abs">Estimators built on the missing-at-random assumption perform poorly once the missingness mechanism departs from MAR, while fully assumption-free approaches yield bounds too conservative to be useful. We propose a distributionally robust linear quantile estimator that uses the Wasserstein distance to measure departures from the MAR distribution: the estimator solves a minimax problem, maximizing the worst-case expected loss over a Wasserstein ball and minimizing it with respect to the parameter of interest.</p>
+          </article>
+        </div>
+
+        <p class="note" style="margin-top:26px">Extensions of the job market paper:</p>
+        <ul class="wip" style="margin-top:8px">
+          <li><span class="n">01</span><span>Generalization of Variational Bilevel Estimation for the ERGM: α-divergence<small>Replacing the Kullback–Leibler objective of the mean-field problem with a family of α-divergences.</small></span></li>
+          <li><span class="n">02</span><span>Variational Bilevel Estimation for the ERGM under weak convexity<small>Relaxing the regularity conditions under which the inner problem admits a unique solution.</small></span></li>
+          <li><span class="n">03</span><span>Variational Bilevel Estimation under globally dependent network topologies<small>Extending the estimator beyond locally dependent graph structures.</small></span></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ================= TEACHING ================= -->
+    <div class="page" id="teaching">
+      <section>
+        <div class="sec-head"><h2>Teaching experience</h2><span class="count">Since 2017</span></div>
+
+        <p class="role-label">Sole instructor · Department of Economics, University of Washington</p>
+        <ul class="courses">
+          <li><span class="code">ECON 382</span><span class="name">Introduction to Econometrics <em>· asynchronous</em></span><span class="terms">Summer 2025</span></li>
+          <li><span class="code">ECON 382</span><span class="name">Introduction to Econometrics <em>· in person</em></span><span class="terms">Autumn 2023</span></li>
+          <li><span class="code">ECON 201</span><span class="name">Introduction to Macroeconomics <em>· in person</em></span><span class="terms">Winter 2022, Spring 2022</span></li>
+          <li><span class="code">ECON 200</span><span class="name">Introduction to Microeconomics <em>· in person</em></span><span class="terms">Autumn 2022</span></li>
+        </ul>
+
+        <p class="role-label">Teaching assistant · Department of Economics, University of Washington</p>
+        <ul class="courses">
+          <li><span class="code">ECON 382</span><span class="name">Introduction to Econometrics</span><span class="terms">Autumn 2021, Winter 2023, Spring 2023</span></li>
+          <li><span class="code">ECON 201</span><span class="name">Introduction to Macroeconomics <em>· online</em></span><span class="terms">Spring 2020, Autumn 2020, Winter 2021</span></li>
+          <li><span class="code">CS&amp;SS 221</span><span class="name">Statistical Concepts and Methods for the Social Sciences <em>· online</em></span><span class="terms">Spring 2021</span></li>
+        </ul>
+
+        <p class="role-label">Teaching assistant · Foster School of Business, University of Washington</p>
+        <ul class="courses">
+          <li><span class="code">SCM 530</span><span class="name">Managing and Mining Big Data</span><span class="terms">Autumn 2025</span></li>
+          <li><span class="code">IS 460</span><span class="name">System Analysis</span><span class="terms">Spring 2024, Winter 2025, Spring 2025, Winter 2026, Spring 2026</span></li>
+          <li><span class="code">IS 300</span><span class="name">Introduction to Information Systems</span><span class="terms">Winter 2024, Autumn 2024</span></li>
+        </ul>
+
+        <p class="role-label">Grader · Foster School of Business, University of Washington</p>
+        <ul class="courses">
+          <li><span class="code">OPMGT 565</span><span class="name">Business Analytics: Tools for Big Data</span><span class="terms">Autumn 2025</span></li>
+          <li><span class="code">MSIS 524</span><span class="name">Managing Information Technology Projects</span><span class="terms">Spring 2024, Autumn 2024, Autumn 2025</span></li>
+          <li><span class="code">MSIS 550</span><span class="name">Leadership Series</span><span class="terms">Spring 2025</span></li>
+        </ul>
+
+        <p class="role-label">Teaching assistant · Mathematics and Statistics, Georgia State University</p>
+        <ul class="courses">
+          <li><span class="code">MATH 1401</span><span class="name">Elementary Statistics</span><span class="terms">Jan 2017 – May 2019</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Courses I am prepared to teach</h2></div>
+        <div class="grid2">
+          <div><h4>Econometrics</h4><p>Introduction to Econometrics · Advanced Econometrics · Computational Methods · Machine Learning for Economics</p></div>
+          <div><h4>Microeconomics</h4><p>Principles of Microeconomics · Intermediate Microeconomics</p></div>
+          <div><h4>Macroeconomics</h4><p>Principles of Macroeconomics · Intermediate Macroeconomics</p></div>
+          <div><h4>Statistics</h4><p>Elementary Statistics · Business Statistics · Data Analysis</p></div>
+          <div><h4>Other</h4><p>Mathematical Economics · Scientific Computing · Business Analytics</p></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= CV ================= -->
+    <div class="page" id="cv">
+      <section>
+        <div class="sec-head"><h2>Education</h2><span class="count">Updated Sep 2026</span></div>
+        <ul class="rows">
+          <li><span class="what"><strong>Ph.D. in Economics</strong><span>University of Washington · Seattle, WA</span></span><span class="when">Jun 2027 (expected)</span></li>
+          <li><span class="what"><strong>M.S. in Mathematics and Statistics</strong><span>Georgia State University · Atlanta, GA</span></span><span class="when">May 2019</span></li>
+          <li><span class="what"><strong>B.A. in Spanish Language and Literature</strong><span>Korea University · Seoul, South Korea</span></span><span class="when">Aug 2016</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Presentations</h2><span class="count">All on the ERGM paper</span></div>
+        <ul class="rows">
+          <li><span class="what"><strong>Microeconometrics Class of 2026 Conference</strong><span>Durham, NC</span></span><span class="when">Sep 2026 (scheduled)</span></li>
+          <li><span class="what"><strong>Western Economic Association International</strong><span>101st Annual Conference · Denver, CO</span></span><span class="when">Jun 2026</span></li>
+          <li><span class="what"><strong>NetSci 2026</strong><span>Statistical Inference for Network Models symposium · Boston, MA</span></span><span class="when">Jun 2026</span></li>
+          <li><span class="what"><strong>Econometrics Seminar</strong><span>Department of Economics, University of Washington</span></span><span class="when">Autumn 2025</span></li>
+          <li><span class="what"><strong>Econometrics Brownbag</strong><span>Department of Economics, University of Washington</span></span><span class="when">Spring 2025</span></li>
+          <li><span class="what"><strong>Microeconomics Brownbag</strong><span>Department of Economics, University of Washington</span></span><span class="when">Winter 2025, Spring 2025</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Technical skills</h2></div>
+        <div class="grid2">
+          <div><h4>Expertise</h4><p>Convex optimization · Network estimation · Distributionally robust optimization · Numerical simulation · Causal inference on networks</p></div>
+          <div><h4>Computing</h4><p>Linux-based high-performance computing · Slurm · Docker and containers</p></div>
+          <div><h4>Programming</h4><p>Python · R · MATLAB · Fortran · SQL</p></div>
+          <div><h4>Languages</h4><p>Korean (native) · English (fluent) · Spanish (fluent, DELE C1) · Japanese (basic)</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Professional experience</h2></div>
+        <ul class="rows">
+          <li><span class="what"><strong>Research Intern, UN ECLAC</strong><span>Santiago, Chile. Compiled a VAT database covering roughly 20 Latin American countries for cross-national fiscal policy analysis, and contributed to the analysis of Honduras's 2013 fiscal reform.</span></span><span class="when">Sep 2014 – Feb 2015</span></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <footer>
+      <span>© 2026 Yoon Choi · Department of Economics, University of Washington</span>
+      <span><a href="mailto:lemineml@uw.edu">lemineml@uw.edu</a></span>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var tabs  = Array.prototype.slice.call(document.querySelectorAll('nav.tabs button'));
+  function go(id){
+    pages.forEach(function(p){ p.classList.toggle('on', p.id === id); });
+    tabs.forEach(function(t){
+      if(t.dataset.go === id){ t.setAttribute('aria-current','page'); }
+      else { t.removeAttribute('aria-current'); }
+    });
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-go]');
+    if(!el) return;
+    e.preventDefault();
+    go(el.dataset.go);
+  });
+})();
+</script>
+</body>
+</html>
