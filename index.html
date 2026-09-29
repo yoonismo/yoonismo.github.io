@@ -53,6 +53,7 @@ img{max-width:100%}
 
   --maxw:1150px;
   --rad:4px;
+  --measure:660px;
 }
 
 @media (prefers-color-scheme: dark){
@@ -203,15 +204,16 @@ section+section{margin-top:44px}
 .paper h3{font-size:17.5px;line-height:1.35;margin-bottom:5px}
 .paper h3 a{color:var(--ink);border-bottom-color:transparent}
 .paper h3 a:hover{color:var(--accent);border-bottom-color:var(--accent-2)}
-.authors{font-size:13.5px;color:var(--muted);margin:0 0 9px}
+.authors{font-size:13.5px;color:var(--muted);margin:0 0 9px;max-width:var(--measure)}
 .authors b{font-weight:600;color:var(--ink-2)}
-.abs{font-size:14.5px;line-height:1.62;color:var(--ink-2);max-width:66ch;margin:0}
+.abs{font-size:14.5px;line-height:1.62;color:var(--ink-2);max-width:var(--measure);margin:0;
+  text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
 .abs.clip{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .paper .links{margin-top:11px;display:flex;gap:16px;flex-wrap:wrap;font-size:13px}
 
 /* wip list */
 .wip{list-style:none;margin:0;padding:0}
-.wip li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);
+.wip li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);max-width:var(--measure);
   display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:baseline;line-height:1.5}
 .wip li:last-child{border-bottom:0}
 .wip .n{font-family:var(--f-mono);font-size:11px;color:var(--faint)}
@@ -267,7 +269,7 @@ section+section{margin-top:44px}
 .tags span{font-size:13px;color:var(--ink-2);background:var(--rail);border:1px solid var(--line);
   padding:4px 10px;border-radius:2px;line-height:1.4}
 
-.note{font-size:13.5px;color:var(--muted);margin:14px 0 0;max-width:62ch}
+.note{font-size:13.5px;color:var(--muted);margin:14px 0 0;max-width:var(--measure)}
 
 footer{border-top:1px solid var(--line);margin-top:60px;padding-top:18px;font-size:12.5px;
   color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -349,7 +351,7 @@ footer a:hover{color:var(--accent)}
       <li><span class="k">Code</span><span class="v"><a href="https://github.com/yoonismo">GitHub</a></span></li>
     </ul>
 
-    <a class="cv-btn" href="https://drive.google.com/file/d/1yGKnCGdzEWmhFrnr3ngnHcaj92HspEm2/view?usp=share_link" target="_blank" rel="noopener">Curriculum Vitae (PDF) <span class="arr">↗</span></a>
+    <a class="cv-btn" href="https://drive.google.com/file/d/1178r--COD_ot5aDI33S6_3KR8HOp6c_f/view?usp=share_link" target="_blank" rel="noopener">Curriculum Vitae (PDF) <span class="arr">↗</span></a>
   </aside>
 
   <main>
@@ -411,7 +413,6 @@ footer a:hover{color:var(--accent)}
             <h3>Variational Regularized Bilevel Estimation for Exponential Random Graph Models</h3>
             <p class="abs">The exponential random graph model (ERGM) is a popular statistical network model for estimating the structural parameters of strategic network formation in economics and finance. Existing methods often produce unreliable estimates of parameters for the triangle, a key network structure that captures the tendency of two persons with shared friends to connect; such estimates may lead to untrustworthy policy recommendations for networks with triangles. Through a variational mean-field approach, my algorithm addresses the two well-known difficulties in estimating the ERGM, the intractability of its normalizing constant and model degeneracy. I introduce L2 regularization that ensures a unique solution to the mean-field approximation problem, and provide a non-asymptotic convergence rate analysis under mild regularity conditions. In Monte Carlo simulations the method achieves a 100% sign recovery rate for triangle parameters in small and mid-sized networks under perturbed initialization, compared with 50% for existing algorithms. A sensitivity analysis of the ERGM parameter estimates to hyperparameter choices offers practical guidance for implementation.</p>
             <div class="links"><a href="https://arxiv.org/abs/2512.07176">arXiv abstract</a><a href="https://arxiv.org/pdf/2512.07176">PDF</a></div>
-            <p class="note">Presented at NetSci 2026 (Boston), the WEAI 101st Annual Conference (Denver), and the Microeconometrics Class of 2026 Conference (Duke).</p>
           </article>
         </div>
       </section>
@@ -421,7 +422,7 @@ footer a:hover{color:var(--accent)}
         <div class="papers">
           <article class="paper">
             <div class="top"><span class="chip wip">In development</span><span class="yr">2026 –</span></div>
-            <h3>Sensitivity Analysis of Causal and Spillover Effects to Unobserved Cross-Unit Confounding under Partial Interference</h3>
+            <h3>Sensitivity Analysis of Causal Effects on Networks to Unobserved Cross-Unit Confounding</h3>
             <p class="abs">Draft in preparation. Please get in touch if you would like to hear more about this project.</p>
           </article>
         </div>
@@ -487,16 +488,6 @@ footer a:hover{color:var(--accent)}
         </ul>
       </section>
 
-      <section>
-        <div class="sec-head"><h2>Courses I am prepared to teach</h2></div>
-        <div class="grid2">
-          <div><h4>Econometrics</h4><p>Introduction to Econometrics · Advanced Econometrics · Computational Methods · Machine Learning for Economics</p></div>
-          <div><h4>Microeconomics</h4><p>Principles of Microeconomics · Intermediate Microeconomics</p></div>
-          <div><h4>Macroeconomics</h4><p>Principles of Macroeconomics · Intermediate Macroeconomics</p></div>
-          <div><h4>Statistics</h4><p>Elementary Statistics · Business Statistics · Data Analysis</p></div>
-          <div><h4>Other</h4><p>Mathematical Economics · Scientific Computing · Business Analytics</p></div>
-        </div>
-      </section>
     </div>
 
     <!-- ================= CV ================= -->
