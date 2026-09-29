@@ -159,7 +159,7 @@ section+section{margin-top:44px}
 .sec-head h2{font-size:19px;font-weight:600}
 .sec-head .count{font-family:var(--f-mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
 
-.lede{font-family:var(--f-display);font-size:19.5px;line-height:1.55;color:var(--ink);max-width:62ch;margin:0 0 18px}
+.lede{font-family:var(--f-body);font-size:16px;line-height:1.65;color:var(--ink-2);max-width:62ch;margin:0 0 14px}
 
 /* home intro with portrait */
 .intro{display:grid;grid-template-columns:1fr 208px;gap:40px;align-items:start}
@@ -186,9 +186,10 @@ section+section{margin-top:44px}
 .interests{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
 .interests li{background:var(--surface);padding:13px 16px;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:baseline}
+.interests .t{line-height:1.5}
 .interests .n{font-family:var(--f-mono);font-size:11px;color:var(--faint)}
 .interests .t{font-size:14.5px;color:var(--ink)}
-.interests .t small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.interests .t small{display:block;color:var(--muted);font-size:13px;margin-top:3px;line-height:1.5}
 
 /* papers */
 .papers{display:flex;flex-direction:column}
@@ -257,6 +258,9 @@ section+section{margin-top:44px}
 .grid2 h4{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
   color:var(--faint);font-weight:400;margin-bottom:8px}
 .grid2 p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.6}
+.skill-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.skill-list li{font-size:14px;color:var(--ink-2);line-height:1.45;padding-left:13px;position:relative}
+.skill-list li::before{content:"";position:absolute;left:0;top:.68em;width:5px;height:1px;background:var(--line-2)}
 
 /* news */
 .news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
@@ -298,7 +302,6 @@ footer a:hover{color:var(--accent)}
         <button data-go="home" aria-current="page">Home</button>
         <button data-go="research">Research</button>
         <button data-go="teaching">Teaching</button>
-        <button data-go="cv">CV</button>
       </nav>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
         <span id="icSun" hidden>
@@ -371,16 +374,6 @@ footer a:hover{color:var(--accent)}
       </section>
 
       <section>
-        <div class="sec-head"><h2>Research interests</h2></div>
-        <ul class="interests">
-          <li><span class="n">01</span><span class="t">Estimation of network formation models<small>Exponential random graph models, variational mean-field approximation, model degeneracy</small></span></li>
-          <li><span class="n">02</span><span class="t">Causal inference on networks<small>Partial interference, spillover effects, sensitivity to unobserved cross-unit confounding</small></span></li>
-          <li><span class="n">03</span><span class="t">Distributionally robust optimization<small>Wasserstein ambiguity sets, quantile regression under departures from missing-at-random</small></span></li>
-          <li><span class="n">04</span><span class="t">Non-convex and bilevel optimization<small>Regularization for uniqueness, non-asymptotic convergence rates, HPC implementation</small></span></li>
-        </ul>
-      </section>
-
-      <section>
         <div class="sec-head"><h2>Job market paper</h2></div>
         <div class="papers">
           <article class="paper">
@@ -399,12 +392,20 @@ footer a:hover{color:var(--accent)}
           <li><span class="what"><strong>Western Economic Association International</strong><span>101st Annual Conference · Denver, CO</span></span><span class="when">Jun 2026</span></li>
           <li><span class="what"><strong>NetSci 2026</strong><span>Statistical Inference for Network Models symposium · Boston, MA</span></span><span class="when">Jun 2026</span></li>
         </ul>
-        <p class="note">The full list of talks, including department seminars and brownbags, is on the <a href="#" data-go="cv">CV</a>.</p>
       </section>
     </div>
 
     <!-- ================= RESEARCH ================= -->
     <div class="page" id="research">
+      <section>
+        <div class="sec-head"><h2>Research interests</h2></div>
+        <ul class="interests">
+          <li><span class="n">01</span><span class="t">Estimation of exponential random graph models<small>Variational mean-field approximation and nonconvex bilevel optimization</small></span></li>
+          <li><span class="n">02</span><span class="t">Causal inference on networks<small>Partial interference, sensitivity to unobserved cross-unit confounding</small></span></li>
+          <li><span class="n">03</span><span class="t">Distributionally robust optimization</span></li>
+        </ul>
+      </section>
+
       <section>
         <div class="sec-head"><h2>Job market paper</h2></div>
         <div class="papers">
@@ -446,6 +447,38 @@ footer a:hover{color:var(--accent)}
           <li><span class="n">03</span><span>Variational Bilevel Estimation under globally dependent network topologies<small>Extending the estimator beyond locally dependent graph structures.</small></span></li>
         </ul>
       </section>
+
+      <!-- Technical skills. Kept out of the page for now. Delete these comment markers to bring it back; the .skill-list styles are still in the CSS above.
+      <section>
+        <div class="sec-head"><h2>Technical skills</h2></div>
+        <div class="grid2">
+          <div><h4>Expertise</h4>
+            <ul class="skill-list">
+              <li>Convex optimization</li>
+              <li>Network estimation</li>
+              <li>Distributionally robust optimization</li>
+              <li>Causal inference on networks</li>
+            </ul>
+          </div>
+          <div><h4>Computing</h4>
+            <ul class="skill-list">
+              <li>Linux-based high-performance computing</li>
+              <li>Slurm</li>
+              <li>Containerization</li>
+            </ul>
+          </div>
+          <div><h4>Programming</h4>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>R</li>
+              <li>MATLAB</li>
+              <li>Fortran</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      -->
     </div>
 
     <!-- ================= TEACHING ================= -->
@@ -491,44 +524,7 @@ footer a:hover{color:var(--accent)}
     </div>
 
     <!-- ================= CV ================= -->
-    <div class="page" id="cv">
-      <section>
-        <div class="sec-head"><h2>Education</h2><span class="count">Updated Sep 2026</span></div>
-        <ul class="rows">
-          <li><span class="what"><strong>Ph.D. in Economics</strong><span>University of Washington · Seattle, WA</span></span><span class="when">Jun 2027 (expected)</span></li>
-          <li><span class="what"><strong>M.S. in Mathematics and Statistics</strong><span>Georgia State University · Atlanta, GA</span></span><span class="when">May 2019</span></li>
-          <li><span class="what"><strong>B.A. in Spanish Language and Literature</strong><span>Korea University · Seoul, South Korea</span></span><span class="when">Aug 2016</span></li>
-        </ul>
-      </section>
-
-      <section>
-        <div class="sec-head"><h2>Presentations</h2><span class="count">All on the ERGM paper</span></div>
-        <ul class="rows">
-          <li><span class="what"><strong>Microeconometrics Class of 2026 Conference</strong><span>Durham, NC</span></span><span class="when">Sep 2026 (scheduled)</span></li>
-          <li><span class="what"><strong>Western Economic Association International</strong><span>101st Annual Conference · Denver, CO</span></span><span class="when">Jun 2026</span></li>
-          <li><span class="what"><strong>NetSci 2026</strong><span>Statistical Inference for Network Models symposium · Boston, MA</span></span><span class="when">Jun 2026</span></li>
-          <li><span class="what"><strong>Econometrics Seminar</strong><span>Department of Economics, University of Washington</span></span><span class="when">Winter, Spring, Autumn 2025</span></li>
-        </ul>
-      </section>
-
-      <section>
-        <div class="sec-head"><h2>Technical skills</h2></div>
-        <div class="grid2">
-          <div><h4>Expertise</h4><p>Convex optimization · Network estimation · Distributionally robust optimization · Numerical simulation · Causal inference on networks</p></div>
-          <div><h4>Computing</h4><p>Linux-based high-performance computing · Slurm · Docker and containers</p></div>
-          <div><h4>Programming</h4><p>Python · R · MATLAB · Fortran · SQL</p></div>
-          <div><h4>Languages</h4><p>Korean (native) · English (fluent) · Spanish (fluent, DELE C1) · Japanese (basic)</p></div>
         </div>
-      </section>
-
-      <section>
-        <div class="sec-head"><h2>Professional experience</h2></div>
-        <ul class="rows">
-          <li><span class="what"><strong>Research Intern, UN ECLAC</strong><span>Santiago, Chile. Compiled a VAT database covering roughly 20 Latin American countries for cross-national fiscal policy analysis, and contributed to the analysis of Honduras's 2013 fiscal reform.</span></span><span class="when">Sep 2014 – Feb 2015</span></li>
-        </ul>
-      </section>
-
-    </div>
 
     <footer>
       <span>© 2026 Yoon Choi · Department of Economics, University of Washington</span>
